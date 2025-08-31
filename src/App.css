@@ -1,0 +1,61 @@
+:root {
+  --maxw: 860px;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.15);
+  --bg1: #000000;
+  --bg2: #000000;
+  --fg: #fcfcfc;
+  --muted: #ffffff;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+}
+
+.wrap {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  max-width: var(--maxw);
+  background: rgba(12, 12, 12, 0.04);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(20px, 6vw, 48px);
+}
+
+h1.typing {
+  font-size: clamp(28px, 6vw, 60px);
+  margin: 8px 0 20px 0;
+  min-height: 1.4em;
+}
+
+.cursor {
+  display: inline-block;
+  width: .6ch;
+  height: 1em;
+  border-right: 3px solid var(--fg);
+  animation: blink .9s step-end infinite;
+}
+@keyframes blink { 
+  50% { border-color: transparent; } 
+}
+
+footer {
+  margin-top: 20px;
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  color: var(--muted);
+}
